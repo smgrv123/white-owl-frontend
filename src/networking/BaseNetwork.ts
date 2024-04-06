@@ -1,18 +1,18 @@
+import Logger from '@/src/lib/Logger';
 import axios, {
   AxiosError,
   AxiosInstance,
   AxiosRequestConfig,
   AxiosResponse,
-  InternalAxiosRequestConfig,
+  InternalAxiosRequestConfig
 } from 'axios';
-import Logger from '@/src/lib/Logger';
 
 export enum HTTPMethod {
   GET = 'GET',
   POST = 'POST',
   PUT = 'PUT',
   DELETE = 'DELETE',
-  PATCH = 'PATCH',
+  PATCH = 'PATCH'
 }
 
 export type RequestInfoType<T> = {
@@ -30,12 +30,12 @@ abstract class HttpClient {
 
   public constructor(baseURL: string, withCredentials: boolean = true) {
     const headers: Readonly<Record<string, string | boolean>> = {
-      'Content-Type': 'application/json; charset=utf-8',
+      'Content-Type': 'application/json; charset=utf-8'
     };
     this.instance = axios.create({
       baseURL,
       withCredentials,
-      headers,
+      headers
     });
     this._initializeResponseInterceptor();
   }
@@ -50,8 +50,7 @@ abstract class HttpClient {
     Logger.error(error);
     Logger.error('Network Error-----', error.response);
     const { response } = error;
-    // @ts-ignore
-    let message = response?.data?.message;
+    const message = response?.data;
     if (message && response?.status !== 401) {
       // !show error
     }
@@ -76,6 +75,7 @@ abstract class HttpClient {
     );
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   handleRequest<T = any, R = AxiosResponse<T>>(requestInfo: RequestInfoType<T>): Promise<R> {
     const { method, config = {}, data = {}, url = '' } = requestInfo;
     let finalURL = url;
@@ -84,7 +84,7 @@ abstract class HttpClient {
       const { queryParams = {}, customHeaders = {} } = requestInfo;
       finalConfig = Object.assign({}, config, {
         params: queryParams,
-        headers: { ...config.headers, ...customHeaders },
+        headers: { ...config.headers, ...customHeaders }
       });
     }
 
@@ -112,6 +112,7 @@ abstract class HttpClient {
       }
     }
   }
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   processRequest<T = any, R = AxiosResponse<T>>(requestInfo: RequestInfoType<T>): Promise<R> {
     return this.handleRequest<T, R>(requestInfo);
   }
@@ -134,6 +135,7 @@ export class AuthlessHttpClient extends HttpClient {
       config.headers = Object.assign({}, config.headers ?? {}, {});
       return config;
     } catch (error) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       throw new Error(error as any);
     }
   };
@@ -160,11 +162,12 @@ export class AuthHttpClient extends HttpClient {
       if (token !== null) {
         config.headers = Object.assign({}, config.headers ?? {}, {
           Authorization: `Bearer ${token}`,
-          sid: sessionToken,
+          sid: sessionToken
         });
       }
       return config;
     } catch (error) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       throw new Error(error as any);
     }
   };
