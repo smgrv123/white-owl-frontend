@@ -1,12 +1,12 @@
 import Logger from '@/src/lib/Logger';
-import { ServiceType, TemplateService } from '@/src/models';
+import { TemplateService } from '@/src/models';
 
-let tempService = new TemplateService();
+const tempService = new TemplateService();
 
 const useTemplate = () => {
   const fetchTemplate = async () => {
     try {
-      let response = await tempService.getTemplate();
+      const response = await tempService.getTemplate();
       Logger.log('res', response);
       return response;
     } catch (error) {
@@ -15,7 +15,7 @@ const useTemplate = () => {
   };
 
   return {
-    fetchTemplate,
+    fetchTemplate
   };
 };
 

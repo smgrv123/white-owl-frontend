@@ -1,4 +1,5 @@
-import { RequestInfoType, HTTPMethod, NetworkClient } from '@/src/networking/BaseNetwork';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { HTTPMethod, NetworkClient, RequestInfoType } from '@/src/networking/BaseNetwork';
 import { ServiceClient } from '@/src/networking/ServiceClient';
 
 export type RequestModel<T> = {
@@ -8,11 +9,11 @@ export type RequestModel<T> = {
 };
 
 export enum ServiceType {
-  TEMPLATE = 'TEMPLATE',
+  TEMPLATE = 'TEMPLATE'
 }
 
 enum ServiceURL {
-  TEMPLATE = '',
+  TEMPLATE = ''
 }
 
 function getNetworkRequestInfo<T>(model: RequestModel<T>): RequestInfoType<T> {
@@ -20,7 +21,7 @@ function getNetworkRequestInfo<T>(model: RequestModel<T>): RequestInfoType<T> {
     case ServiceType.TEMPLATE: {
       return {
         url: ServiceURL.TEMPLATE,
-        method: HTTPMethod.GET,
+        method: HTTPMethod.GET
       };
     }
   }
@@ -34,10 +35,9 @@ export class TemplateService {
 
   getTemplate = (): Promise<any> => {
     const getTemplateCall = getNetworkRequestInfo({
-      type: ServiceType.TEMPLATE,
+      type: ServiceType.TEMPLATE
     });
 
-    //@ts-ignore
     return this.networkRepository.processRequest<any, any>(getTemplateCall);
   };
 }
