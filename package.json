@@ -8,7 +8,7 @@
     "start": "next start",
     "prepare": "husky install",
     "format": "prettier --write .",
-    "lint": "next lint && eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint": "next lint && eslint . --ext .js,.jsx,.ts,.tsx && prettier --check .",
     "lint:fix": "next lint && eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "check-types": "tsc --noemit"
   },
