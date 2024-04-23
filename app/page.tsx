@@ -1,13 +1,17 @@
-import useTemplate from '@/src/hooks/useTemplate';
+import Header from '@/src/components/Home/Header';
+import Showreel from '@/src/components/Home/Showreel';
+// import useFilms from '@/src/hooks/useFilms';
 
-export default function Home() {
-  const { fetchTemplate } = useTemplate();
-
-  fetchTemplate();
+export default async function Home() {
+  // const { fetchTemplate } = useFilms();
+  // await fetchTemplate();
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      hello world
+    <main className="min-h-screen relative">
+      <section className="z-10 absolute w-[100%]">
+        <Header />
+      </section>
+      <Showreel src="https://videos.pexels.com/video-files/6548176/6548176-hd_1920_1080_24fps.mp4" />
     </main>
   );
 }

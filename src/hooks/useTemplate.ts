@@ -1,5 +1,5 @@
 import Logger from '@/src/lib/Logger';
-import { TemplateService } from '@/src/models';
+import { TemplateService } from '@/src/models/network';
 
 const tempService = new TemplateService();
 

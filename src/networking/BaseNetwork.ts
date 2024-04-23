@@ -145,34 +145,34 @@ export class AuthlessHttpClient extends HttpClient {
   };
 }
 
-export class AuthHttpClient extends HttpClient {
-  private baseUrl: string;
-  constructor(baseUrl: string) {
-    super(baseUrl);
-    this.baseUrl = baseUrl;
-    this._initializeRequestInterceptor();
-  }
+// export class AuthHttpClient extends HttpClient {
+//   private baseUrl: string;
+//   constructor(baseUrl: string) {
+//     super(baseUrl);
+//     this.baseUrl = baseUrl;
+//     this._initializeRequestInterceptor();
+//   }
 
-  private injectToken = async (
-    config: InternalAxiosRequestConfig
-  ): Promise<InternalAxiosRequestConfig> => {
-    try {
-      const token = '';
-      const sessionToken = '';
-      if (token !== null) {
-        config.headers = Object.assign({}, config.headers ?? {}, {
-          Authorization: `Bearer ${token}`,
-          sid: sessionToken
-        });
-      }
-      return config;
-    } catch (error) {
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      throw new Error(error as any);
-    }
-  };
+//   private injectToken = async (
+//     config: InternalAxiosRequestConfig
+//   ): Promise<InternalAxiosRequestConfig> => {
+//     try {
+//       const token = '';
+//       const sessionToken = '';
+//       if (token !== null) {
+//         config.headers = Object.assign({}, config.headers ?? {}, {
+//           Authorization: `Bearer ${token}`,
+//           sid: sessionToken
+//         });
+//       }
+//       return config;
+//     } catch (error) {
+//       // eslint-disable-next-line @typescript-eslint/no-explicit-any
+//       throw new Error(error as any);
+//     }
+//   };
 
-  private _initializeRequestInterceptor = () => {
-    this.instance.interceptors.request.use(this.injectToken, (error) => Promise.reject(error));
-  };
-}
+//   private _initializeRequestInterceptor = () => {
+//     this.instance.interceptors.request.use(this.injectToken, (error) => Promise.reject(error));
+//   };
+// }
