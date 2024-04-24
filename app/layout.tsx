@@ -1,3 +1,4 @@
+import Header from '@/src/components/Home/Header';
 import { cn } from '@/src/lib/utils';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
@@ -13,7 +14,15 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={cn(inter.className, ' bg-themeBlack text-textWhite')}>{children}</body>
+      <body className={cn(inter.className, ' bg-themeBlack text-textWhite')}>
+        <main>
+          <section className="z-10 absolute w-[100%]">
+            <Header />
+          </section>
+
+          {children}
+        </main>
+      </body>
     </html>
   );
 }

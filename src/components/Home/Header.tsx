@@ -1,4 +1,4 @@
-import { socialIcons } from '@/src/constants/home';
+import { navButtons, socialIcons } from '@/src/constants/home';
 import Image from 'next/image';
 import Link from 'next/link';
 import Icon from '../../assets/Icon.png';
@@ -11,8 +11,15 @@ const Header = () => {
         <Image src={Icon} alt="White Owl Icon" width={140} height={140} />
         <Image src={Logo} alt="White Owl Logo" width={341} height={109} />
       </div>
-      <Link href={'/about-us'}>ABOUT US</Link>
-      <Link href={'/films'}>ALL FILMS</Link>
+      {navButtons.map((i, index) => (
+        <Link
+          href={i.href}
+          className="hover:text-textYellow font-pf_text font-normal text-[35px]"
+          key={index}
+        >
+          {i.title}
+        </Link>
+      ))}
       <div className="flex flex-row">
         {socialIcons.map((i, index) => (
           <Link href={i.url} key={index}>

@@ -16,6 +16,10 @@ const config = {
       textWhite: '#ffffff',
       textYellow: '#F0D44D'
     },
+    fontFamily: {
+      ayuthaya: 'Ayuthaya',
+      pf_text: 'PF-Text'
+    },
     container: {
       center: true,
       padding: '2rem',

@@ -74,3 +74,17 @@
     @apply bg-background text-foreground;
   }
 }
+
+@font-face {
+  font-family: 'PF-Text';
+  src: url('/fonts/PF-Videotext-Pro-Regular.ttf') format('truetype');
+  font-weight: 400; /* Black weight is typically 900 */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ayuthaya';
+  src: url('/fonts/Ayuthaya.ttf') format('truetype');
+  font-weight: 400; /* Black weight is typically 900 */
+  font-style: normal;
+}
