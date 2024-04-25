@@ -1,3 +1,4 @@
+import OurFilms from '@/src/components/Home/Films';
 import Showreel from '@/src/components/Home/Showreel';
 // import useFilms from '@/src/hooks/useFilms';
 
@@ -6,11 +7,9 @@ export default async function Home() {
   // await fetchTemplate();
 
   return (
-    <section className="min-h-screen relative">
-      {/* <section className="z-10 absolute w-[100%]">
-        <Header />
-      </section> */}
-      <Showreel src="https://videos.pexels.com/video-files/6548176/6548176-hd_1920_1080_24fps.mp4" />
+    <section className='min-h-screen relative'>
+      <Showreel src='https://videos.pexels.com/video-files/6548176/6548176-hd_1920_1080_24fps.mp4' />
+      <OurFilms />
     </section>
   );
 }

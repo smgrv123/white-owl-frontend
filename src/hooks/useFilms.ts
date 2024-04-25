@@ -5,10 +5,10 @@ import { FilmsService } from '@/src/models/network/Films';
 const filmsService = new FilmsService();
 
 const useFilms = () => {
-  const fetchTemplate = async () => {
+  const fetchFilms = async () => {
     try {
       //   const response = await tempService.getTemplate();
-      const response = await filmsService.getTemplate();
+      const response = await filmsService.getFilms();
       Logger.log('res', response);
       return response;
     } catch (error) {
@@ -17,7 +17,7 @@ const useFilms = () => {
   };
 
   return {
-    fetchTemplate
+    fetchFilms
   };
 };
 

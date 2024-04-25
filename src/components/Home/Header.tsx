@@ -6,21 +6,21 @@ import Logo from '../../assets/Logo.png';
 
 const Header = () => {
   return (
-    <nav className="flex flex-row justify-between items-center">
-      <div className="flex flex-row">
-        <Image src={Icon} alt="White Owl Icon" width={140} height={140} />
-        <Image src={Logo} alt="White Owl Logo" width={341} height={109} />
+    <nav className='flex flex-row justify-between items-center'>
+      <div className='flex flex-row'>
+        <Image src={Icon} alt='White Owl Icon' width={140} height={140} />
+        <Image src={Logo} alt='White Owl Logo' width={341} height={109} />
       </div>
       {navButtons.map((i, index) => (
         <Link
           href={i.href}
-          className="hover:text-textYellow font-pf_text font-normal text-[35px]"
+          className='hover:text-textYellow font-pf_text font-normal text-[35px]'
           key={index}
         >
           {i.title}
         </Link>
       ))}
-      <div className="flex flex-row">
+      <div className='flex flex-row'>
         {socialIcons.map((i, index) => (
           <Link href={i.url} key={index}>
             <Image src={i.src} alt={i.name} width={82} height={77} />

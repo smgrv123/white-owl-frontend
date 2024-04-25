@@ -33,7 +33,7 @@ export class FilmsService {
     this.networkRepository = ServiceClient.getRepositoryInstance();
   }
 
-  getTemplate = (): Promise<
+  getFilms = (): Promise<
     {
       _id: string;
       youtubeEmbedId: string;
