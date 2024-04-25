@@ -10,7 +10,7 @@ const OurFilms = async () => {
       <div className='font-pf_text font-normal text-8xl'>Our Films</div>
       <div className='flex flex-rol'>
         <div className='flex-1'>
-          {[...filmsData, ...filmsData]?.map((i) => (
+          {filmsData?.map((i) => (
             <Link href={'/films'} className='m-16 bg-textWhite' key={i._id}>
               <img
                 src='https://wallpapercave.com/wp/JTpVKUS.jpg'
