@@ -10,12 +10,6 @@ const config = {
   ],
   prefix: '',
   theme: {
-    colors: {
-      themeBlack: '#000000',
-      themeYellow: '#f1d34c',
-      textWhite: '#ffffff',
-      textYellow: '#F0D44D'
-    },
     fontFamily: {
       ayuthaya: 'Ayuthaya',
       pf_text: 'PF-Text'
@@ -29,6 +23,10 @@ const config = {
     },
     extend: {
       colors: {
+        themeBlack: '#000000',
+        themeYellow: '#f1d34c',
+        textWhite: '#ffffff',
+        textYellow: '#F0D44D',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
