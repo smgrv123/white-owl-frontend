@@ -1,34 +1,42 @@
-import Insta from '../assets/Insta.png';
-import Mail from '../assets/Mail.png';
-import Twitter from '../assets/Twitter.png';
-import Vimeo from '../assets/Vimeo.png';
-import Youtube from '../assets/YouTube.png';
+import WhiteInstagram from '../assets/whiteLogos/instagram.png';
+import WhiteMail from '../assets/whiteLogos/mail.png';
+import WhiteVimeo from '../assets/whiteLogos/vimeo.png';
+import WhiteYoutube from '../assets/whiteLogos/youtube.png';
+import YellowInstagram from '../assets/yellowLogos/instagram.png';
+import YellowMail from '../assets/yellowLogos/mail.png';
+import YellowVimeo from '../assets/yellowLogos/vimeo.png';
+import YellowYoutube from '../assets/yellowLogos/youtube.png';
 
-export const socialIcons = [
+import { socialIconsTypes } from '../types/home';
+
+export const socialIcons: socialIconsTypes[] = [
   {
-    src: Youtube,
+    srcWhite: WhiteInstagram,
+    srcYellow: YellowInstagram,
+    name: 'Instagram',
+    url: '',
+    rank: 1
+  },
+  {
+    srcWhite: WhiteYoutube,
+    srcYellow: YellowYoutube,
     name: 'Youtube',
-    url: ''
+    url: '',
+    rank: 2
   },
   {
-    src: Insta,
-    name: 'Insta',
-    url: ''
-  },
-  {
-    src: Twitter,
-    name: 'Twittwr',
-    url: ''
-  },
-  {
-    src: Vimeo,
+    srcWhite: WhiteVimeo,
+    srcYellow: YellowVimeo,
     name: 'Vimeo',
-    url: ''
+    url: '',
+    rank: 3
   },
   {
-    src: Mail,
+    srcWhite: WhiteMail,
+    srcYellow: YellowMail,
     name: 'Mail',
-    url: ''
+    url: '',
+    rank: 4
   }
 ];
 

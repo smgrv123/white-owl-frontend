@@ -3,8 +3,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Icon from '../../assets/Icon.png';
 import Logo from '../../assets/Logo.png';
+import IconHandler from './IconHandler';
 
 const Header = () => {
+  const sortedSociaIcons = socialIcons.sort((a, b) => a.rank - b.rank);
+
   return (
     <nav className='flex flex-row justify-between items-center'>
       <Link href='/' className='flex flex-row'>
@@ -21,10 +24,8 @@ const Header = () => {
         </Link>
       ))}
       <div className='flex flex-row'>
-        {socialIcons.map((i, index) => (
-          <Link href={i.url} key={index}>
-            <Image src={i.src} alt={i.name} width={82} height={77} />
-          </Link>
+        {sortedSociaIcons.map((i, index) => (
+          <IconHandler i={i} key={index} />
         ))}
       </div>
     </nav>
