@@ -13,7 +13,7 @@ const Footer = () => {
   const pincode = [4, 0, 0, 1, 1, 6];
 
   return (
-    <div className='bg-themeYellow  p-11 flex flex-col items-end font-ayuthaya font-normal'>
+    <section className='bg-themeYellow  p-11 flex flex-col items-end font-ayuthaya font-normal'>
       <div className='flex items-end'>
         <div className='font-pf_text font-normal text-6xl pb-10'>VISIT</div>
         <Image src={Icon} alt={'white owl icon'} height={150} width={150} />
@@ -40,7 +40,7 @@ const Footer = () => {
         <p>CONTACT US: contact@whiteowlproduction.in</p>
         <p>+91 98213 87772</p>
       </div>
-    </div>
+    </section>
   );
 };
 

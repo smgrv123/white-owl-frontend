@@ -7,10 +7,10 @@ import Logo from '../../assets/Logo.png';
 const Header = () => {
   return (
     <nav className='flex flex-row justify-between items-center'>
-      <div className='flex flex-row'>
+      <Link href='/' className='flex flex-row'>
         <Image src={Icon} alt='White Owl Icon' width={140} height={140} />
         <Image src={Logo} alt='White Owl Logo' width={341} height={109} />
-      </div>
+      </Link>
       {navButtons.map((i, index) => (
         <Link
           href={i.href}
