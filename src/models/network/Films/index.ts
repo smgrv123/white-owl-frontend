@@ -40,6 +40,7 @@ export class FilmsService {
       directorsName: string;
       fileTitle: string;
       heroImageId: string;
+      category: string;
     }[]
   > => {
     const getTemplateCall = getNetworkRequestInfo<null>({
@@ -54,6 +55,7 @@ export class FilmsService {
         directorsName: string;
         fileTitle: string;
         heroImageId: string;
+        category: string;
       }[]
     >(getTemplateCall);
   };
