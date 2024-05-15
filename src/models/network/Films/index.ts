@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { HTTPMethod, NetworkClient, RequestInfoType } from '@/src/networking/BaseNetwork';
 import { ServiceClient } from '@/src/networking/ServiceClient';
+import { VideoInfo } from '@/src/types/network';
 
 export type RequestModel<T> = {
   type: ServiceType;
@@ -9,7 +10,8 @@ export type RequestModel<T> = {
 };
 
 export enum ServiceType {
-  GET_FILMS = 'GET_FILMS'
+  GET_FILMS = 'GET_FILMS',
+  GET_CATEGORY_FILMS = 'GET_CATEGORY_FILMS'
 }
 
 enum ServiceURL {
@@ -24,6 +26,13 @@ function getNetworkRequestInfo<T>(model: RequestModel<T>): RequestInfoType<T> {
         method: HTTPMethod.GET
       };
     }
+    case ServiceType.GET_CATEGORY_FILMS: {
+      return {
+        url: ServiceURL.GET_FILMS,
+        method: HTTPMethod.GET,
+        queryParams: model.queryParams
+      };
+    }
   }
 }
 
@@ -33,30 +42,21 @@ export class FilmsService {
     this.networkRepository = ServiceClient.getRepositoryInstance();
   }
 
-  getFilms = (): Promise<
-    {
-      _id: string;
-      youtubeEmbedId: string;
-      directorsName: string;
-      fileTitle: string;
-      heroImageId: string;
-      category: string;
-    }[]
-  > => {
+  getFilms = (): Promise<VideoInfo[]> => {
     const getTemplateCall = getNetworkRequestInfo<null>({
       type: ServiceType.GET_FILMS
     });
 
-    return this.networkRepository.processRequest<
-      null,
-      {
-        _id: string;
-        youtubeEmbedId: string;
-        directorsName: string;
-        fileTitle: string;
-        heroImageId: string;
-        category: string;
-      }[]
-    >(getTemplateCall);
+    return this.networkRepository.processRequest<null, VideoInfo[]>(getTemplateCall);
+  };
+
+  getCategoryFilms = (categoryName: string): Promise<VideoInfo[]> => {
+    const getTemplateCall = getNetworkRequestInfo<null>({
+      type: ServiceType.GET_CATEGORY_FILMS,
+      queryParams: {
+        categoryName
+      }
+    });
+    return this.networkRepository.processRequest<null, VideoInfo[]>(getTemplateCall);
   };
 }

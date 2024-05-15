@@ -1,13 +1,11 @@
 import Logger from '@/src/lib/Logger';
 import { FilmsService } from '@/src/models/network/Films';
 
-// const tempService = new TemplateService();
 const filmsService = new FilmsService();
 
 const useFilms = () => {
   const fetchFilms = async () => {
     try {
-      //   const response = await tempService.getTemplate();
       const response = await filmsService.getFilms();
       Logger.log('res', response);
       return response;
@@ -16,8 +14,18 @@ const useFilms = () => {
     }
   };
 
+  const fetchCategoryFilms = async (categoryName: string) => {
+    try {
+      const response = await filmsService.getCategoryFilms(categoryName);
+      return response;
+    } catch (error) {
+      Logger.error(error);
+    }
+  };
+
   return {
-    fetchFilms
+    fetchFilms,
+    fetchCategoryFilms
   };
 };
 

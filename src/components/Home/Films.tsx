@@ -1,19 +1,10 @@
 import useFilms from '@/src/hooks/useFilms';
-import Image from 'next/image';
-import Link from 'next/link';
+import { VideoInfo } from '@/src/types/network';
+import FilmsHolder from './FilmsHolder';
 
 const OurFilms = async () => {
   const { fetchFilms } = useFilms();
   const filmsData = await fetchFilms();
-
-  interface VideoInfo {
-    _id: string;
-    youtubeEmbedId: string;
-    directorsName: string;
-    fileTitle: string;
-    heroImageId: string;
-    category: string;
-  }
 
   // Use a Map for more efficient data management
   const temp = new Map<string, VideoInfo[]>();
@@ -33,24 +24,21 @@ const OurFilms = async () => {
 
   return (
     <section className='p-[88px]'>
-      <div className='font-pf_text font-normal text-8xl'>Our Films</div>
+      <div className='font-pf_text font-normal text-6xl'>Our Films</div>
       <div className='flex flex-rol'>
         <div className='flex-1'>
-          {renderArr?.map((i) => (
-            <Link href={`/films/${i.category}`} className='m-16 bg-textWhite' key={i._id}>
-              <Image
-                src={`https://ik.imagekit.io/whiteowl/${i.heroImageId}`}
-                loading='lazy'
-                alt={i.fileTitle}
-                width={960}
-                height={637}
-              />
-              <div className='p-10 font-ayuthaya font-normal'>
-                {i.length > 1 && 'folder'}
-                <div className=''>{i.fileTitle}</div>
-                <div>{`// dir. ${i.directorsName}`}</div>
-              </div>
-            </Link>
+          {renderArr?.map((i, index) => (
+            <FilmsHolder
+              directorsName={i.directorsName}
+              fileTitle={i.fileTitle}
+              category={i.category}
+              youtubeEmbedId={i.youtubeEmbedId}
+              length={i.length}
+              _id={i._id}
+              heroImageId={i.heroImageId}
+              href={!(i.length > 1) ? `films/${i.category}/${i._id}` : `/films/${i.category}`}
+              key={index}
+            />
           ))}
         </div>
         <div className='flex flex-1 justify-center'>scroller</div>

@@ -17,7 +17,7 @@ const Header = () => {
       {navButtons.map((i, index) => (
         <Link
           href={i.href}
-          className='hover:text-textYellow font-pf_text font-normal text-[35px]'
+          className='hover:text-textYellow font-pf_text font-normal text-[25px]'
           key={index}
         >
           {i.title}
