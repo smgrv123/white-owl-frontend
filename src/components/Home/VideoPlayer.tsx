@@ -5,7 +5,6 @@ const VideoPlayer = ({ src, className }: { src: string; className?: string }) =>
       autoPlay
       muted
       loop
-      controls
       // ! change the poster for the showreel
       poster='https://wallpapercave.com/wp/JTpVKUS.jpg'
       className={className && className}

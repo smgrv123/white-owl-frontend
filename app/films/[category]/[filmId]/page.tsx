@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react';
 const CategoryDetails = () => {
   const [categoryFilmData, setcategoryFilmData] = useState<VideoInfo>();
   const currentUrl = usePathname().split('/');
-  const filmCategory = currentUrl[2];
+  const filmCategory = currentUrl[2].replace(/%20/g, ' ');
   const filmId = currentUrl[3];
   const { fetchCategoryFilms } = useFilms();
 
