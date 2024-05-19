@@ -23,7 +23,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <section className='z-10 absolute w-[100%]'>
             <Header />
           </section>
-
           {children}
           <Footer />
         </main>

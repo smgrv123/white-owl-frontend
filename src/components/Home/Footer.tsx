@@ -13,34 +13,34 @@ const Footer = () => {
   const pincode = [4, 0, 0, 1, 1, 6];
 
   return (
-    <section className='bg-themeYellow  p-11 flex flex-col items-end font-ayuthaya font-normal'>
+    <footer className='bg-themeYellow p-5 sm:p-11 flex flex-col items-end font-ayuthaya font-normal'>
       <div className='flex items-end'>
-        <div className='font-pf_text font-normal text-6xl pb-10'>VISIT</div>
-        <Image src={Icon} alt={'white owl icon'} height={150} width={150} />
+        <div className='font-pf_text font-normal text-lg sm:text-6xl pb-10 '>VISIT</div>
+        <Image src={Icon} alt={'white owl icon'} className='sm:w-36 sm:h-36 w-16 h-16' />
       </div>
       <div className='flex flex-col text-black'>
         {arr.map((i, index) => (
           <div key={index}>
-            <div className='px-1'>{i}</div>
-            <div className='h-1 w-[350px] bg-white rounded' />
+            <div className='px-1 sm:text-xl text-[7px]'>{i}</div>
+            <div className='h-[1px] sm:h-1 w-44 sm:w-[350px] bg-white rounded' />
           </div>
         ))}
         <div className='flex flex-row self-end items-end'>
           <div className='text-white pr-[20px]'>PINCODE</div>
           {pincode.map((i, index) => (
-            <div className='border-white border-2 px-1 mt-[20px]' key={index}>
-              <div>{i}</div>
+            <div className='border-white border-[1px] sm:border-2 px-1 mt-[20px]' key={index}>
+              <div className='sm:text-xl text-[7px]'>{i}</div>
             </div>
           ))}
         </div>
-        <div className='h-1 w-[350px] bg-white rounded' />
+        <div className='h-[1px] sm:h-1 w-44 sm:w-[350px] bg-white rounded' />
       </div>
-      <div className='text-black pt-5'>
+      <div className='text-black pt-5 sm:text-xl text-[7px]'>
         <p>Landmark- Next to German laundry</p>
         <p>CONTACT US: contact@whiteowlproduction.in</p>
         <p>+91 98213 87772</p>
       </div>
-    </section>
+    </footer>
   );
 };
 

@@ -1,18 +1,31 @@
+import WOCollabs from '@/src/assets/WOCollabs.svg';
 import OurFilms from '@/src/components/Home/Films';
 import VideoPlayer from '@/src/components/Home/VideoPlayer';
 import { TypedComponent } from '@/src/components/commons/typedComponent';
+import useFilms from '@/src/hooks/useFilms';
+import Image from 'next/image';
 
-export default function Home() {
+export default async function Home() {
+  const { fetchFilms } = useFilms();
+  const filmsData = await fetchFilms();
   return (
     <section className='min-h-screen relative'>
-      <VideoPlayer src='/videos/showreel.mp4' />
+      <VideoPlayer poster='/images/showreelposter.png' src='/videos/showreel.mp4' />
       <div className='flex flex-col justify-center text-themeYellow font-ayuthaya font-normal text-[16px]'>
-        <VideoPlayer src={'/videos/loader.mp4'} className='h-[500px]' />
-        <div className='px-[200px]'>
+        <VideoPlayer
+          poster='/images/animationposter.png'
+          src={'/videos/loader.mp4'}
+          className='h-52 sm:h-[500px]'
+        />
+        <div className='sm:px-[200px] px-11'>
           <TypedComponent string='White Owl Production was born with a purpose; to help our clients strategise, produce and market video content that engages their audience. We combine purpose, narrative and production to craft conscious content for agencies, brands and businesses. We provide end to end solutions to our clients.' />
         </div>
       </div>
-      <OurFilms />
+      {filmsData && <OurFilms filmsData={filmsData} />}
+      <div className='p-10 sm:p-[88px]'>
+        <div className='font-pf_text font-normal text-3xl sm:text-7xl'>Our Collaborations</div>
+        <Image src={WOCollabs} alt='' className='sm:pt-8 pt-3' />
+      </div>
     </section>
   );
 }

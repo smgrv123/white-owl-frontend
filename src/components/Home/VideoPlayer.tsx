@@ -1,12 +1,20 @@
-const VideoPlayer = ({ src, className }: { src: string; className?: string }) => {
+const VideoPlayer = ({
+  src,
+  poster,
+  className
+}: {
+  src: string;
+  poster: string;
+  className?: string;
+}) => {
   return (
     <video
       src={src}
       autoPlay
+      // controls
       muted
       loop
-      // ! change the poster for the showreel
-      poster='https://wallpapercave.com/wp/JTpVKUS.jpg'
+      poster={poster}
       className={className && className}
     />
   );

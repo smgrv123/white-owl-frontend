@@ -1,6 +1,7 @@
 'use client';
 
 import { VideoInfo } from '@/src/types/network';
+import { FolderOpen } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -24,8 +25,8 @@ const FilmsHolder = ({
         width={960}
         height={637}
       />
-      <div className='p-10 font-ayuthaya font-normal'>
-        {length && length > 1 && 'folder'}
+      <div className='text-xs sm:text-2xl p-3 sm:p-10 font-ayuthaya font-normal'>
+        {length && length > 1 && <FolderOpen />}
         <div className=''>{fileTitle}</div>
         <div>{`// dir. ${directorsName}`}</div>
       </div>
