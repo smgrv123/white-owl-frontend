@@ -11,7 +11,7 @@ export default function AboutUs() {
         <div className='flex items-center flex-col w-[35%]'>
           <Image
             src={AboutUsImage}
-            alt='Vishal P Sane'
+            alt='Vishal P. Sane'
             height={392}
             width={392}
             className='rounded-[196px]'
