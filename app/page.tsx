@@ -19,7 +19,7 @@ export default async function Home() {
         </div>
       </div>
       {filmsData && <OurFilms filmsData={filmsData} />}
-      <div className='p-10 sm:p-[88px]'>
+      <div className='p-5 sm:p-[88px]'>
         <div className='font-pf_text font-normal text-3xl sm:text-7xl'>Our Collaborations</div>
         <Image src={WOCollabs} alt='' className='sm:pt-8 pt-3' />
       </div>
