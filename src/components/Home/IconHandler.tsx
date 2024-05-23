@@ -14,7 +14,11 @@ const IconHandler = ({ i }: { i: socialIconsTypes }) => {
       onMouseOver={() => seticonHover(true)}
       onMouseOut={() => seticonHover(false)}
     >
-      <Image src={!iconHover ? i.srcWhite : i.srcYellow} alt={i.name} width={82} height={77} />
+      <Image
+        src={!iconHover ? i.srcWhite : i.srcYellow}
+        alt={i.name}
+        className='sm:w-20 sm:h-20 w-9 h-9'
+      />
     </Link>
   );
 };

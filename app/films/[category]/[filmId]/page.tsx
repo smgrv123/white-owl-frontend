@@ -1,9 +1,10 @@
 'use client';
 
+import Loader from '@/src/assets/loader.gif';
 import VimeoEmbed from '@/src/components/Films/VimeoEmbed';
-import VideoPlayer from '@/src/components/Home/VideoPlayer';
 import useFilms from '@/src/hooks/useFilms';
 import { VideoInfo } from '@/src/types/network';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
@@ -42,11 +43,7 @@ const CategoryDetails = () => {
           )}
         </div>
       ) : (
-        <VideoPlayer
-          poster='/images/animationposter.png'
-          src={'/videos/loader.mp4'}
-          className='h-52 sm:h-[500px]'
-        />
+        <Image src={Loader} alt='Loader' className='h-55 sm:h-[500px] sm:w-[500px] m-auto' />
       )}
     </section>
   );

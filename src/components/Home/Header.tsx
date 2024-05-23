@@ -1,22 +1,15 @@
 'use client';
 
 import { navButtons, socialIcons } from '@/src/constants/home';
-import { Menu } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
-import Modal from 'react-modal';
 import Icon from '../../assets/Icon.png';
 import Logo from '../../assets/Logo.png';
+import HeaderHamburger from './HeaderHamburger';
 import IconHandler from './IconHandler';
 
 const Header = () => {
   const sortedSociaIcons = socialIcons.sort((a, b) => a.rank - b.rank);
-  const [openModal, setopenModal] = useState(false);
-
-  const closeModal = () => {
-    setopenModal(true);
-  };
 
   return (
     <nav className='flex flex-row justify-between items-center '>
@@ -47,15 +40,8 @@ const Header = () => {
           </div>
         </div>
       ) : (
-        <Menu onClick={closeModal} />
+        <HeaderHamburger icons={sortedSociaIcons} />
       )}
-      <Modal
-        isOpen={openModal}
-        onRequestClose={closeModal}
-        className='h-[430px] w-[313px] bg-black border-2 border-white rounded-r-md'
-      >
-        Hello World
-      </Modal>
     </nav>
   );
 };
