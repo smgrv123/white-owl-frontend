@@ -17,7 +17,7 @@ const IconHandler = ({ i }: { i: socialIconsTypes }) => {
       <Image
         src={!iconHover ? i.srcWhite : i.srcYellow}
         alt={i.name}
-        className='sm:w-20 sm:h-20 w-9 h-9'
+        className='sm:w-14 sm:h-14 w-9 h-9'
       />
     </Link>
   );

@@ -22,6 +22,9 @@ const config = {
       }
     },
     extend: {
+      cursor: {
+        custom_pointer: "url('/images/cursor.png'),auto"
+      },
       colors: {
         themeBlack: '#000000',
         themeYellow: '#f1d34c',

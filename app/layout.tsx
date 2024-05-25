@@ -19,9 +19,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const DynamicHeader = dynamic(() => import('@/src/components/Home/Header'), {
     ssr: false
   });
+
   return (
     <html lang='en'>
-      <body className={cn(inter.className, 'bg-themeBlack text-textWhite')}>
+      <body className={cn(inter.className, 'bg-themeBlack text-textWhite cursor-custom_pointer')}>
         <main>
           <section className='z-10 absolute w-[100%]'>
             <DynamicHeader />
