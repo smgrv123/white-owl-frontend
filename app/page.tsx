@@ -8,7 +8,10 @@ import { Suspense } from 'react';
 export default async function Home() {
   return (
     <section className='min-h-screen relative'>
-      <VideoPlayer poster='/images/showreelposter.png' src='/videos/showreel.mp4' />
+      <VideoPlayer
+        poster='/images/showreelposter.png'
+        src='https://ik.imagekit.io/whiteowl/showreel.mp4?updatedAt=1716864321508'
+      />
       <div className='flex flex-col justify-center text-themeYellow font-ayuthaya font-normal text-[16px]'>
         <Image src={Loader} alt='Loader' className='h-52 w-52 sm:h-[500px] sm:w-[500px] m-auto' />
         <div className='sm:px-[200px] px-11'>

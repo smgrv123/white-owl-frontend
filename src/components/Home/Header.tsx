@@ -14,8 +14,8 @@ const Header = () => {
   return (
     <nav className='grid grid-cols-6'>
       <Link href='/' className='flex flex-row col-span-2'>
-        <Image src={Icon} alt='White Owl Icon' className='sm:w-36 sm:h-36 h-10 w-10' />
-        <Image src={Logo} alt='White Owl Logo' className='sm:w-80 sm:h-28 w-32 h-10' />
+        <Image src={Icon} alt='White Owl Icon' className='sm:w-36 sm:h-36 h-10 w-10' priority />
+        <Image src={Logo} alt='White Owl Logo' className='sm:w-80 sm:h-28 w-32 h-10' priority />
       </Link>
 
       {typeof window !== undefined && window.screen.width > 640 ? (
