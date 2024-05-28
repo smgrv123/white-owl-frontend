@@ -9,14 +9,17 @@ const VideoPlayer = ({
 }) => {
   return (
     <video
-      src={src}
       autoPlay
       // controls
       muted
       loop
       poster={poster}
       className={className && className}
-    />
+    >
+      <source src={src} type='video/mp4' />
+      <track kind='captions' />
+      Your browser does not support the video tag.
+    </video>
   );
 };
 

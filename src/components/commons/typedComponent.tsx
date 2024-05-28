@@ -7,6 +7,7 @@ const TypedComponent = ({ string }: { string: string }) => (
     strings={[string]}
     className='flex items-center text-justify text-xs sm:text-xl'
     typeSpeed={20}
+    showCursor={false}
   />
 );
 
