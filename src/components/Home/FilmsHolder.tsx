@@ -11,7 +11,8 @@ const FilmsHolder = ({
   heroImageId,
   length,
   _id,
-  href
+  href,
+  category
 }: VideoInfo & {
   length?: number;
   href: string;
@@ -27,7 +28,7 @@ const FilmsHolder = ({
       />
       <div className='text-xs sm:text-2xl p-3 sm:p-10 font-ayuthaya font-normal'>
         {length && length > 1 && <FolderOpen />}
-        <div className=''>{fileTitle}</div>
+        <div className=''>{length && length > 1 ? category : fileTitle}</div>
         <div>{`// dir. ${directorsName}`}</div>
       </div>
     </Link>

@@ -6,7 +6,7 @@ const OurFilms = ({ filmsData }: { filmsData: VideoInfo[] }) => {
   const filmsCategoriesData = new Map<string, VideoInfo[]>();
 
   // Build the category map
-  filmsData?.forEach((video) => {
+  filmsData.reverse()?.forEach((video) => {
     if (filmsCategoriesData.has(video.category)) {
       filmsCategoriesData.get(video.category)?.push(video);
     } else {
