@@ -7,7 +7,7 @@ export default class Logger {
 
   public static log(...logData: any[]) {
     // ! add env variable handling
-    if (true) console.log(logData);
+    if (false) console.log(logData);
   }
 
   public static error(...errData: any) {

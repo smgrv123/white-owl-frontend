@@ -53,13 +53,7 @@ abstract class HttpClient {
     const message = response?.data;
     if (message && response?.status !== 401) {
       // !show error
-    }
-
-    if (response?.status && response?.status === 401) {
-      // ! refresh token logic
-    }
-    if (response?.status && response?.status === 403) {
-      // !log out logic
+      Logger.error('error', message);
     }
 
     return Promise.reject(response);
@@ -144,35 +138,3 @@ export class AuthlessHttpClient extends HttpClient {
     this.instance.interceptors.request.use(this.injectToken, (error) => Promise.reject(error));
   };
 }
-
-// export class AuthHttpClient extends HttpClient {
-//   private baseUrl: string;
-//   constructor(baseUrl: string) {
-//     super(baseUrl);
-//     this.baseUrl = baseUrl;
-//     this._initializeRequestInterceptor();
-//   }
-
-//   private injectToken = async (
-//     config: InternalAxiosRequestConfig
-//   ): Promise<InternalAxiosRequestConfig> => {
-//     try {
-//       const token = '';
-//       const sessionToken = '';
-//       if (token !== null) {
-//         config.headers = Object.assign({}, config.headers ?? {}, {
-//           Authorization: `Bearer ${token}`,
-//           sid: sessionToken
-//         });
-//       }
-//       return config;
-//     } catch (error) {
-//       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-//       throw new Error(error as any);
-//     }
-//   };
-
-//   private _initializeRequestInterceptor = () => {
-//     this.instance.interceptors.request.use(this.injectToken, (error) => Promise.reject(error));
-//   };
-// }
