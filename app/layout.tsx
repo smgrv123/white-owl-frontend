@@ -1,8 +1,8 @@
 import WOCollabs from '@/src/assets/WOCollabs.svg';
 import Footer from '@/src/components/Home/Footer';
+import Header from '@/src/components/Home/Header';
 import { cn } from '@/src/lib/utils';
 import type { Metadata } from 'next';
-import dynamic from 'next/dynamic';
 import { Inter } from 'next/font/google';
 import Image from 'next/image';
 import './globals.css';
@@ -17,16 +17,12 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const DynamicHeader = dynamic(() => import('@/src/components/Home/Header'), {
-    ssr: false
-  });
-
   return (
     <html lang='en'>
       <body className={cn(inter.className, 'bg-themeBlack text-textWhite cursor-custom_pointer')}>
         <main>
           <section className='z-10 absolute w-[100%]'>
-            <DynamicHeader />
+            <Header />
           </section>
           {children}
           <div className='p-5 sm:p-[88px]'>
