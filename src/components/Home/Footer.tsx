@@ -13,7 +13,7 @@ const Footer = () => {
   const pincode = [4, 0, 0, 1, 1, 6];
 
   return (
-    <footer className='bg-themeYellow p-5 sm:p-11 flex flex-col items-end font-ayuthaya font-normal'>
+    <footer className='bg-themeYellow p-5 mb-5 sm:mb-0 sm:p-11 flex flex-col items-end font-ayuthaya font-normal'>
       <div className='flex items-end'>
         <div className='font-pf_text font-normal text-lg sm:text-6xl pb-10 '>VISIT</div>
         <Image src={Icon} alt={'white owl icon'} className='sm:w-36 sm:h-36 w-16 h-16' />
@@ -22,7 +22,7 @@ const Footer = () => {
         {arr.map((i, index) => (
           <div key={index}>
             <div className='px-1 sm:text-xl text-[7px]'>{i}</div>
-            <div className='h-[1px] sm:h-1 w-44 sm:w-[350px] bg-white rounded' />
+            <div className='h-[1px] sm:h-1 w-44 sm:w-[500px] bg-white rounded' />
           </div>
         ))}
         <div className='flex flex-row self-end items-end'>
@@ -33,7 +33,7 @@ const Footer = () => {
             </div>
           ))}
         </div>
-        <div className='h-[1px] sm:h-1 w-44 sm:w-[350px] bg-white rounded' />
+        <div className='h-[1px] sm:h-1 w-44 sm:w-[500px] bg-white rounded' />
       </div>
       <div className='text-black pt-5 sm:text-xl text-[7px]'>
         <p>Landmark- Next to German laundry</p>

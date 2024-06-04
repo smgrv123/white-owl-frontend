@@ -1,10 +1,9 @@
-import WOCollabs from '@/src/assets/WOCollabs.svg';
 import Footer from '@/src/components/Home/Footer';
 import Header from '@/src/components/Home/Header';
+import WOCollabs from '@/src/components/commons/WOCollabs';
 import { cn } from '@/src/lib/utils';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import Image from 'next/image';
 import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
@@ -27,7 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
           <div className='p-5 sm:p-[88px]'>
             <div className='font-pf_text font-normal text-3xl sm:text-7xl'>Our Collaborations</div>
-            <Image src={WOCollabs} alt='' className='sm:pt-8 pt-3' />
+            <WOCollabs />
           </div>
           <Footer />
         </main>
