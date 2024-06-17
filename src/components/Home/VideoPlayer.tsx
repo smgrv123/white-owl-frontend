@@ -14,6 +14,8 @@ const VideoPlayer = ({
       muted
       loop
       poster={poster}
+      preload='metadata'
+      playsInline
       className={className && className}
     >
       <source src={src} type='video/mp4' />
