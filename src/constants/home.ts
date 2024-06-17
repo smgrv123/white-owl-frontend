@@ -14,28 +14,28 @@ export const socialIcons: socialIconsTypes[] = [
     srcWhite: WhiteInstagram,
     srcYellow: YellowInstagram,
     name: 'Instagram',
-    url: '',
+    url: 'https://www.instagram.com/whiteowlproductionmumbai/',
     rank: 1
   },
   {
     srcWhite: WhiteYoutube,
     srcYellow: YellowYoutube,
     name: 'Youtube',
-    url: '',
+    url: 'https://www.youtube.com/@whiteowlproduction7701',
     rank: 2
   },
   {
     srcWhite: WhiteVimeo,
     srcYellow: YellowVimeo,
     name: 'Vimeo',
-    url: '',
+    url: 'https://vimeo.com/user218921917',
     rank: 3
   },
   {
     srcWhite: WhiteMail,
     srcYellow: YellowMail,
     name: 'Mail',
-    url: '',
+    url: 'mailto:contact@whiteowlproduction.in',
     rank: 4
   }
 ];

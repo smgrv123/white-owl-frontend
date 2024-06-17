@@ -12,6 +12,13 @@ export const metadata: Metadata = {
   description: '',
   icons: {
     icon: '/favicon.ico'
+  },
+  keywords: 'movies, films, production, whiteowl, ads, Vishal Sane',
+  openGraph: {
+    type: 'website',
+    description:
+      'White Owl Production was born with a purpose; to help our clients strategise, produce and market video content that engages their audience. We combine purpose, narrative and production to craft conscious content for agencies, brands and businesses. We provide end to end solutions to our clients.',
+    images: 'https://ik.imagekit.io/whiteowl/Logo.png?updatedAt=1718627625435'
   }
 };
 
