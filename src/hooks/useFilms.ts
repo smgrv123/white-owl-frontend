@@ -1,23 +1,30 @@
 import Logger from '@/src/lib/Logger';
-import { FilmsService } from '@/src/models/network/Films';
-
-const filmsService = new FilmsService();
+import { VideoInfo } from '../types/network';
 
 const useFilms = () => {
   const fetchFilms = async () => {
     try {
-      const response = await filmsService.getFilms();
-      Logger.log('res', response);
-      return response;
+      const fetchResponse = await fetch('https://white-owl-backend.onrender.com/films/get', {
+        cache: 'no-cache'
+      });
+      const response = await fetchResponse.json();
+      return response as VideoInfo[];
     } catch (error) {
-      Logger.error('first');
+      Logger.error('first', error);
     }
   };
 
   const fetchCategoryFilms = async (categoryName: string) => {
     try {
-      const response = await filmsService.getCategoryFilms(categoryName);
-      return response;
+      Logger.log('resp', categoryName);
+      const fetchResponse = await fetch(
+        `https://white-owl-backend.onrender.com/films/get/?categoryName=${categoryName}`,
+        {
+          cache: 'no-cache'
+        }
+      );
+      const response = await fetchResponse.json();
+      return response as VideoInfo[];
     } catch (error) {
       Logger.error(error);
     }
