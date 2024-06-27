@@ -35,7 +35,10 @@ abstract class HttpClient {
     this.instance = axios.create({
       baseURL,
       withCredentials,
-      headers
+      headers: {
+        'Cache-Control': 'no-cache',
+        ...headers
+      }
     });
     this._initializeResponseInterceptor();
   }
