@@ -10,10 +10,6 @@ const config = {
   ],
   prefix: '',
   theme: {
-    fontFamily: {
-      ayuthaya: 'Ayuthaya',
-      pf_text: 'PF-Text'
-    },
     container: {
       center: true,
       padding: '2rem',

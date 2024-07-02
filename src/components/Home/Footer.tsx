@@ -38,7 +38,7 @@ const Footer = () => {
       <div className='text-black pt-5 sm:text-xl text-[7px]'>
         <p>Landmark- Next to German laundry</p>
         <p>CONTACT US: contact@whiteowlproduction.in</p>
-        <p>+91 98213 87772</p>
+        {/* <p>+91 98213 87772</p> */}
       </div>
     </footer>
   );
