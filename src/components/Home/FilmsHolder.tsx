@@ -25,7 +25,7 @@ const FilmsHolder = ({
         width={960}
         height={637}
       />
-      <div className='text-xs sm:text-2xl p-3 sm:p-10 font-ayuthaya font-normal'>
+      <div className='text-xs sm:text-2xl p-3 sm:p-5 font-ayuthaya font-normal'>
         {length && length > 1 && <FolderOpen />}
         <div className=''>{length && length > 1 ? category : fileTitle}</div>
         {/* <div>{`// dir. ${directorsName}`}</div> */}

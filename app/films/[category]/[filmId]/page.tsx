@@ -37,7 +37,7 @@ const CategoryDetails = () => {
               />
               <div className=' text-xs sm:text-2xl p-3 sm:p-10p-10 font-ayuthaya font-normal'>
                 <div className=''>{categoryFilmData.fileTitle}</div>
-                <div>{`// dir. ${categoryFilmData.directorsName}`}</div>
+                {/* <div>{`// dir. ${categoryFilmData.directorsName}`}</div> */}
               </div>
             </div>
           )}
