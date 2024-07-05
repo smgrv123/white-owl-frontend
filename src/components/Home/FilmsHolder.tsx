@@ -6,7 +6,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const FilmsHolder = ({
-  directorsName,
   fileTitle,
   heroImageId,
   length,
@@ -29,7 +28,7 @@ const FilmsHolder = ({
       <div className='text-xs sm:text-2xl p-3 sm:p-10 font-ayuthaya font-normal'>
         {length && length > 1 && <FolderOpen />}
         <div className=''>{length && length > 1 ? category : fileTitle}</div>
-        <div>{`// dir. ${directorsName}`}</div>
+        {/* <div>{`// dir. ${directorsName}`}</div> */}
       </div>
     </Link>
   );
